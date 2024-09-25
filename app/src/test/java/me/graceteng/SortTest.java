@@ -21,13 +21,13 @@ class SortTest {
 
     @Test
     void shouldBubbleSortNumbers() {
-        Sort sort = new Sort(new int[]{3, -1, 6, -4, 5, 3, 0, 7});
-        assertThat(sort.bubbleSort()).isEqualTo(new int[]{-4, -1, 0, 3, 3, 5, 6, 7});
+        assertThat(Sort.bubbleSort(new int[]{3, -1, 6, -4, 5, 3, 0, 7}))
+                .isEqualTo(new int[]{-4, -1, 0, 3, 3, 5, 6, 7});
     }
 
     @Test
     void shouldInsertionSortNumbers() {
-        Sort sort = new Sort(new int[]{3, -1, 6, -4, 5, 3, 0, 7});
-        assertThat(sort.insertionSort()).isEqualTo(new int[]{-4, -1, 0, 3, 3, 5, 6, 7});
+        assertThat(Sort.insertionSort(new int[]{3, -1, 6, -4, 5, 3, 0, 7}))
+                .isEqualTo(new int[]{-4, -1, 0, 3, 3, 5, 6, 7});
     }
 }

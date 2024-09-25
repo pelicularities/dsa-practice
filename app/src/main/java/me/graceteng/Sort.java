@@ -1,10 +1,6 @@
 package me.graceteng;
 
 public class Sort {
-    private final int[] numbers;
-    public Sort(int[] numbers) {
-        this.numbers = numbers;
-    }
 
     public static boolean isSorted(int[] numbers) {
         for (int i = 0; i < numbers.length - 2; i++) {
@@ -14,7 +10,7 @@ public class Sort {
         return true;
     }
 
-    public int[] bubbleSort() {
+    public static int[] bubbleSort(int[] numbers) {
         // intuition: first, check if list is sorted
         // while list is not sorted, proceed pairwise down the list
         // and swap positions if the larger number comes before the lower number
@@ -30,14 +26,14 @@ public class Sort {
                     numbers[i] = numbers[j];
                     numbers[j] = temp;
                     continueSorting = true;
-                };
+                }
             }
         }
 
         return numbers;
     }
 
-    public int[] insertionSort() {
+    public static int[] insertionSort(int[] numbers) {
         // intuition: maintain a "sorted" section and an "unsorted" section
         // index 0 is already "sorted", so we start sorting at index 1
         // i is first unsorted index of current loop
