@@ -7,6 +7,6 @@ This is a repo where I practice data structures and algorithms in various langua
 - [x] Binary Search
 - [x] Bubble Sort
 - [x] Insertion Sort
-- [ ] Merge Sort
+- [x] Merge Sort
 - [ ] Quick Sort
 - [x] Fibonacci Sequence

@@ -55,4 +55,71 @@ public class Sort {
 
         return numbers;
     }
+
+    private static int[] merge(int[] leftHalf, int[] rightHalf) {
+        // find size of arrays
+        int leftSize = leftHalf.length;
+        int rightSize = rightHalf.length;
+
+        // merge sorted halves
+        int[] sortedNumbers = new int[leftSize + rightSize];
+        int sortedIndex = 0;
+        int leftHalfIndex = 0;
+        int rightHalfIndex = 0;
+
+        while (leftHalfIndex < leftSize && rightHalfIndex < rightSize) {
+            if (leftHalf[leftHalfIndex] < rightHalf[rightHalfIndex]) {
+                // left half's smallest value is smaller than right half's
+                sortedNumbers[sortedIndex] = leftHalf[leftHalfIndex];
+                leftHalfIndex++;
+            } else {
+                // right half's smallest value is smaller or equal to left half's
+                sortedNumbers[sortedIndex] = rightHalf[rightHalfIndex];
+                rightHalfIndex++;
+            }
+
+            sortedIndex++;
+        }
+
+        // there may still be remaining numbers in either leftHalf or rightHalf
+        // the next two while loops should be mutually exclusive
+        while (leftHalfIndex < leftSize) {
+            sortedNumbers[sortedIndex] = leftHalf[leftHalfIndex];
+            sortedIndex++;
+            leftHalfIndex++;
+        }
+
+        while (rightHalfIndex < rightSize) {
+            sortedNumbers[sortedIndex] = rightHalf[rightHalfIndex];
+            sortedIndex++;
+            rightHalfIndex++;
+        }
+
+        return sortedNumbers;
+    }
+
+    public static int[] mergeSort(int[] numbers) {
+        // intuition: divide and conquer recursively
+        // base case: there is only 1 element, so we are sorted
+        if (numbers.length < 2) {
+            return numbers;
+        }
+
+        // common case: there are 2 or more elements
+        // divide the input array into 2 equal(ish) parts
+        int midpoint = numbers.length / 2;
+        int[] leftHalf = new int[midpoint];
+        int[] rightHalf = new int[numbers.length - midpoint];
+
+        // populate smaller arrays
+        System.arraycopy(numbers, 0, leftHalf, 0, midpoint);
+        System.arraycopy(numbers, midpoint, rightHalf, 0, numbers.length - midpoint);
+
+        // recurse: sort halves
+        int[] sortedLeftHalf = mergeSort(leftHalf);
+        int[] sortedRightHalf = mergeSort(rightHalf);
+
+        // conquer: merge sorted halves
+        return merge(sortedLeftHalf, sortedRightHalf);
+    }
 }
