@@ -6,6 +6,6 @@ This is a repo where I practice data structures and algorithms in various langua
 - [x] Two Sum
 - [x] Binary Search
 - [x] Bubble Sort
-- [ ] Insertion Sort
+- [x] Insertion Sort
 - [ ] Merge Sort
 - [ ] Quick Sort

@@ -37,7 +37,26 @@ public class Sort {
         return numbers;
     }
 
-    public int[] sort() {
-        return bubbleSort();
+    public int[] insertionSort() {
+        // intuition: maintain a "sorted" section and an "unsorted" section
+        // index 0 is already "sorted", so we start sorting at index 1
+        // i is first unsorted index of current loop
+        for (int i = 1; i < numbers.length; i++) {
+            int currentValue = numbers[i];
+            // we will use j to find the index of the largest number
+            // that is smaller than currentValue
+            int j = i - 1;
+            while (j >= 0 && numbers[j] > currentValue) {
+                // move every number to the right
+                // to make room for currentValue
+                // when we find its spot
+                numbers[j + 1] = numbers[j];
+                j--;
+            }
+            // insert currentValue
+            numbers[j + 1] = currentValue;
+        }
+
+        return numbers;
     }
 }
