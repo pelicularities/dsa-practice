@@ -9,3 +9,4 @@ This is a repo where I practice data structures and algorithms in various langua
 - [x] Insertion Sort
 - [ ] Merge Sort
 - [ ] Quick Sort
+- [x] Fibonacci Sequence
