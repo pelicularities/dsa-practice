@@ -10,3 +10,9 @@ This is a repo where I practice data structures and algorithms in various langua
 - [x] Merge Sort
 - [ ] Quick Sort
 - [x] Fibonacci Sequence
+- [ ] Binary Tree
+  - [x] Insert
+  - [ ] Remove
+  - [ ] Traverse (BFS)
+  - [ ] Traverse (DFS)
+  - [ ] Balance
