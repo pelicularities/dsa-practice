@@ -1,11 +1,13 @@
 package me.graceteng.neetcode;
 
+import org.assertj.core.api.Assert;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RemoveDuplicatesTest {
@@ -21,9 +23,9 @@ class RemoveDuplicatesTest {
     @MethodSource("provideArraysForRemoveDuplicatesTest")
     void shouldCorrectlyReturnNumberOfUniqueValuesInStaticArray(int[] input, int[] expected) {
         int result = RemoveDuplicates.removeDuplicates(input);
-        assertEquals(expected.length, result);
+        assertThat(result).isEqualTo(expected.length);
         for (int i = 0; i < result; i++) {
-            assertEquals(expected[i], input[i]);
+            assertThat(input[i]).isEqualTo(expected[i]);
         }
     }
 }
