@@ -1,6 +1,5 @@
 package me.graceteng.neetcode;
 
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -8,7 +7,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RemoveDuplicatesTest {
     public static Stream<Arguments> provideArraysForRemoveDuplicatesTest() {
